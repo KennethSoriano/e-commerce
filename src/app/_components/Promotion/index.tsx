@@ -15,27 +15,30 @@ const Promotion = () => {
   targetDate.setDate(targetDate.getDate() + 3)
 
   useEffect(() => {
+    const targetDate = new Date()
+    targetDate.setDate(targetDate.getDate() + 3)
+  
     const timerInterval = setInterval(() => {
       const currentTime = new Date()
       const timeDifference = Math.max(Number(targetDate) - Number(currentTime), 0)
-
+  
       const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
       const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
-
+  
       setTime({ days, hours, minutes, seconds })
-
+  
       if (timeDifference === 0) {
         clearInterval(timerInterval)
         // You can add code here to handle what happens when the target date is reached.
       }
     }, 1000)
-
+  
     return () => {
       clearInterval(timerInterval) // Cleanup the interval when the component unmounts.
     }
-  }, [])
+  }, []) // Empty dependency array  
 
   return (
     <section className={classes.promotion}>
@@ -66,4 +69,3 @@ const StatBox = ({ label, value }: { label: string; value: number }) => (
 )
 
 export default Promotion
-

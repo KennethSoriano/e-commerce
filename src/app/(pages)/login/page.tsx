@@ -56,5 +56,3 @@ export const metadata: Metadata = {
     url: '/login',
   }),
 }
-
-

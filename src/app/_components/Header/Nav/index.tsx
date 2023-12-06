@@ -35,4 +35,3 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
     </nav>
   )
 }
-
