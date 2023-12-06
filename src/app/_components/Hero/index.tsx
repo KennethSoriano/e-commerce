@@ -24,3 +24,5 @@ export const Hero: React.FC<Page['hero']> = props => {
 
   return <HeroToRender {...props} />
 }
+
+
